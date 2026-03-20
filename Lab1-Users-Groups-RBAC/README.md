@@ -4,9 +4,9 @@
 
 \## Objective
 
-Practice creating and managing user identities, 
+Practice creating and managing user identities,
 
-groups, and role assignments in Microsoft Entra ID 
+groups, and role assignments in Microsoft Entra ID
 
 to simulate a real enterprise IAM environment.
 
@@ -16,7 +16,7 @@ to simulate a real enterprise IAM environment.
 
 \- Microsoft Entra ID Free tier
 
-\- Personal lab tenant: yourname.onmicrosoft.com
+\- Personal lab tenant: jalenthomas1216gmail.onmicrosoft.com
 
 
 
@@ -26,7 +26,7 @@ to simulate a real enterprise IAM environment.
 
 \### Users created
 
-\- Created 5 test users across IT, HR, Finance, 
+\- Created 5 test users across IT, HR, Finance,
 
 &#x20; and Security departments
 
@@ -48,7 +48,7 @@ to simulate a real enterprise IAM environment.
 
 \- Assigned Security Reader to IT-Staff group
 
-\- Tested access by logging in as each user 
+\- Tested access by logging in as each user
 
 &#x20; in a private browser window
 
@@ -58,15 +58,15 @@ to simulate a real enterprise IAM environment.
 
 \- Direct role assignment gives immediate access
 
-\- Group-based role assignment — removing a user 
+\- Group-based role assignment — removing a user
 
 &#x20; from the group instantly revokes the inherited role
 
-\- Helpdesk Administrator could reset passwords 
+\- Helpdesk Administrator could reset passwords
 
 &#x20; but could not modify roles or access security settings
 
-\- Department/Job Title attributes are critical 
+\- Department/Job Title attributes are critical
 
 &#x20; for dynamic group rules
 
@@ -101,6 +101,4 @@ to simulate a real enterprise IAM environment.
 !\[IT-Staff Group](it-staff-group.png)
 
 !\[Helpdesk Role](helpdesk-role.png)
-
-
 

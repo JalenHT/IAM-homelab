@@ -92,3 +92,15 @@ to simulate a real enterprise IAM environment.
 
 \- Microsoft 365 Admin Center
 
+
+
+\## Screenshots
+
+!\[Users List](users-list.png)
+
+!\[IT-Staff Group](it-staff-group.png)
+
+!\[Helpdesk Role](helpdesk-role.png)
+
+
+

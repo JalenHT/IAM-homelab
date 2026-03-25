@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jalen Thomas — IAM Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #1e2d45;
+    --accent: #0ea5e9;
+    --accent2: #38bdf8;
+    --accent-dim: rgba(14,165,233,0.12);
+    --green: #22d3a0;
+    --green-dim: rgba(34,211,160,0.1);
+    --amber: #f59e0b;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --mono: 'Space Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(14,165,233,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,165,233,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(10,14,23,0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  nav .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--mono);
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: var(--accent);
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: var(--mono);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 580px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border);
+  }
+
+  .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); }
+
+  /* STATS ROW */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 48px 0;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  /* SECTION */
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  /* CERT BADGES */
+  .certs {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s;
+  }
+
+  .cert-badge:hover { border-color: var(--accent); }
+
+  .cert-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .cert-icon.green { background: var(--green-dim); }
+  .cert-icon.blue { background: var(--accent-dim); }
+
+  .cert-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .cert-issuer {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+  }
+
+  /* SKILL GRID */
+  .skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .skill-card:hover { border-color: var(--accent); background: var(--surface2); }
+
+  .skill-category {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    background: var(--accent-dim);
+    color: var(--accent2);
+    border: 1px solid rgba(14,165,233,0.2);
+  }
+
+  .tag.green {
+    background: var(--green-dim);
+    color: var(--green);
+    border-color: rgba(34,211,160,0.2);
+  }
+
+  .tag.amber {
+    background: rgba(245,158,11,0.1);
+    color: var(--amber);
+    border-color: rgba(245,158,11,0.2);
+  }
+
+  /* LAB CARDS */
+  .labs { display: flex; flex-direction: column; gap: 16px; }
+
+  .lab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+
+  .lab-card:hover { border-color: var(--accent); background: var(--surface2); }
+
+  .lab-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lab-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .lab-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .lab-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .lab-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    background: var(--green-dim);
+    border: 1px solid rgba(34,211,160,0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    height: fit-content;
+  }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 24px; }
+
+  .exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .exp-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-top: 2px;
+  }
+
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-bullets li {
+    font-size: 13px;
+    color: var(--text-dim);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .exp-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .contact-item:hover { border-color: var(--accent); }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent-dim);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-value {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .footer-text {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero, .stats, section {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .stats { animation-delay: 0.1s; }
+  section:nth-of-type(1) { animation-delay: 0.15s; }
+  section:nth-of-type(2) { animation-delay: 0.2s; }
+  section:nth-of-type(3) { animation-delay: 0.25s; }
+  section:nth-of-type(4) { animation-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .skill-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .lab-card { grid-template-columns: 1fr; }
+    .lab-num { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="nav-logo">jalen.thomas // IAM</span>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Identity & Access Management</div>
+    <h1>Jalen Thomas</h1>
+    <div class="hero-subtitle">IAM Analyst · Houston/Spring, TX</div>
+    <p class="hero-desc">
+      Security-certified IT professional with hands-on experience in Microsoft Entra ID,
+      identity lifecycle management, and PowerShell automation via Microsoft Graph API.
+      Holder of CompTIA Security+ with a documented 5-lab home lab portfolio.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/JalenHT/IAM-homelab" target="_blank" class="btn btn-primary">
+        &#128196; View GitHub Lab
+      </a>
+      <a href="https://www.linkedin.com/in/jalen-t-19817a379/" target="_blank" class="btn btn-outline">
+        &#128100; LinkedIn Profile
+      </a>
+      <a href="mailto:jalenthomas1216@gmail.com" class="btn btn-outline">
+        &#9993; Contact Me
+      </a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <div class="stat-label">Labs Completed</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2</span>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <div class="stat-label">Users Managed</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <div class="stat-label">Scripts Written</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="section-header">
+      <span class="section-label">Certifications</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs">
+      <div class="cert-badge">
+        <div class="cert-icon green">&#9989;</div>
+        <div>
+          <div class="cert-name">CompTIA Security+</div>
+          <div class="cert-issuer">CompTIA · Active</div>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon blue">&#128737;</div>
+        <div>
+          <div class="cert-name">Cybersecurity 101</div>
+          <div class="cert-issuer">TryHackMe · Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-label">Technical Skills</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <div class="skill-category">Identity & Access</div>
+        <div class="skill-tags">
+          <span class="tag">Entra ID</span>
+          <span class="tag">RBAC</span>
+          <span class="tag">MFA</span>
+          <span class="tag">SSO</span>
+          <span class="tag">SAML</span>
+          <span class="tag">OAuth</span>
+          <span class="tag">OIDC</span>
+          <span class="tag">PIM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Automation</div>
+        <div class="skill-tags">
+          <span class="tag green">PowerShell 7</span>
+          <span class="tag green">Graph API</span>
+          <span class="tag green">CSV Scripting</span>
+          <span class="tag green">New-MgUser</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Security</div>
+        <div class="skill-tags">
+          <span class="tag">Security+</span>
+          <span class="tag">Sign-in Logs</span>
+          <span class="tag">App Auditing</span>
+          <span class="tag">Security Defaults</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">AI Tools</div>
+        <div class="skill-tags">
+          <span class="tag amber">Claude</span>
+          <span class="tag amber">ChatGPT</span>
+          <span class="tag amber">Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Tools & Platforms</div>
+        <div class="skill-tags">
+          <span class="tag">VS Code</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Azure Portal</span>
+          <span class="tag">M365 Admin</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="tag green">Troubleshooting</span>
+          <span class="tag green">Documentation</span>
+          <span class="tag green">Training</span>
+          <span class="tag green">Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LABS -->
+  <section id="labs">
+    <div class="section-header">
+      <span class="section-label">IAM Home Lab — Microsoft Entra ID</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="labs">
+
+      <a href="https://github.com/JalenHT/IAM-homelab/tree/main/Lab1-Users-Groups-RBAC" target="_blank" class="lab-card">
+        <div class="lab-num">01</div>
+        <div>
+          <div class="lab-title">Users, Groups & RBAC</div>
+          <div class="lab-desc">Created 5 test users across departments, configured security and M365 groups, assigned RBAC roles directly and via group membership, tested least privilege access.</div>
+          <div class="lab-tags">
+            <span class="tag">User Lifecycle</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">Group Management</span>
+          </div>
+        </div>
+        <div class="lab-status">&#10003; Complete</div>
+      </a>
+
+      <a href="https://github.com/JalenHT/IAM-homelab/tree/main/Lab2-MFA" target="_blank" class="lab-card">
+        <div class="lab-num">02</div>
+        <div>
+          <div class="lab-title">MFA & Authentication Methods</div>
+          <div class="lab-desc">Enabled Security Defaults, registered Microsoft Authenticator, tested MFA approval and denial flows, analyzed sign-in logs showing Success, Interrupted, and Failure events.</div>
+          <div class="lab-tags">
+            <span class="tag">MFA</span>
+            <span class="tag">Security Defaults</span>
+            <span class="tag">Sign-in Logs</span>
+          </div>
+        </div>
+        <div class="lab-status">&#10003; Complete</div>
+      </a>
+
+      <a href="https://github.com/JalenHT/IAM-homelab/tree/main/Lab3-App-Registrations" target="_blank" class="lab-card">
+        <div class="lab-num">03</div>
+        <div>
+          <div class="lab-title">App Registrations & API Permissions</div>
+          <div class="lab-desc">Registered an enterprise application, configured delegated and application Microsoft Graph permissions, granted admin consent, created and managed client secrets.</div>
+          <div class="lab-tags">
+            <span class="tag">App Registration</span>
+            <span class="tag">API Permissions</span>
+            <span class="tag">Client Secrets</span>
+          </div>
+        </div>
+        <div class="lab-status">&#10003; Complete</div>
+      </a>
+
+      <a href="https://github.com/JalenHT/IAM-homelab/tree/main/Lab4-PowerShell-Graph" target="_blank" class="lab-card">
+        <div class="lab-num">04</div>
+        <div>
+          <div class="lab-title">PowerShell & Microsoft Graph API</div>
+          <div class="lab-desc">Connected to Entra ID via Graph API, queried all users and groups, created and disabled users programmatically using New-MgUser and Update-MgUser cmdlets.</div>
+          <div class="lab-tags">
+            <span class="tag green">PowerShell 7</span>
+            <span class="tag green">Graph API</span>
+            <span class="tag green">Automation</span>
+          </div>
+        </div>
+        <div class="lab-status">&#10003; Complete</div>
+      </a>
+
+      <a href="https://github.com/JalenHT/IAM-homelab/tree/main/Lab5-Bulk-User-CSV" target="_blank" class="lab-card">
+        <div class="lab-num">05</div>
+        <div>
+          <div class="lab-title">Bulk User Creation via CSV</div>
+          <div class="lab-desc">Built a PowerShell script that reads employee data from a CSV file and automatically provisions all accounts in Entra ID with proper attributes, error handling, and status logging.</div>
+          <div class="lab-tags">
+            <span class="tag green">CSV Automation</span>
+            <span class="tag green">Bulk Provisioning</span>
+            <span class="tag green">Error Handling</span>
+          </div>
+        </div>
+        <div class="lab-status">&#10003; Complete</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-label">Work Experience</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Work Study — Innovation Lab</div>
+            <div class="exp-company">Lone Star College-University Park · Part-time</div>
+          </div>
+          <div class="exp-date">Aug 2024 – Jan 2026</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Troubleshot laboratory equipment and technology issues to minimize downtime</li>
+          <li>Provided technical guidance, training, and support for lab personnel</li>
+          <li>Served as primary technical point of contact; maintained high customer satisfaction</li>
+          <li>Applied conflict resolution skills to resolve disputes in a fast-paced environment</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Work Study — Student Success Institute</div>
+            <div class="exp-company">Lone Star College-University Park · Part-time</div>
+          </div>
+          <div class="exp-date">Mar 2024 – May 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Researched and compiled content for student success and LinkedIn development workshops</li>
+          <li>Organized and maintained confidential student records per data handling procedures</li>
+          <li>Supported program operations including events, inventory, and student recruitment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-label">Get In Touch</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:jalenthomas1216@gmail.com" class="contact-item">
+        <div class="contact-icon">&#9993;</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">jalenthomas1216@gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:3375329460" class="contact-item">
+        <div class="contact-icon">&#128222;</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">337-532-9460</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/jalen-t-19817a379/" target="_blank" class="contact-item">
+        <div class="contact-icon">&#128100;</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/jalen-t-19817a379</div>
+        </div>
+      </a>
+      <a href="https://github.com/JalenHT/IAM-homelab" target="_blank" class="contact-item">
+        <div class="contact-icon">&#128196;</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/JalenHT/IAM-homelab</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-text">Jalen Thomas · Houston/Spring, TX · IAM Analyst · 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>

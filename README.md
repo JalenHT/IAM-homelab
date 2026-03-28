@@ -1,44 +1,63 @@
-# IAM Home Lab — Microsoft Entra ID
+# IAM Home Lab — Microsoft Entra ID & Active Directory
 
 Hands-on Identity and Access Management labs built in 
-Microsoft Entra ID using PowerShell and Microsoft Graph API.
+Microsoft Entra ID and on-premises Active Directory 
+using PowerShell and Microsoft Graph API.
 
 ## Certifications
 - CompTIA Security+ ✅
+- TryHackMe Cybersecurity 101 ✅
 
 ## Labs completed
 
 | Lab | Topic | Key Skills | Status |
 |-----|-------|------------|--------|
-| Lab 1 | Users, Groups & RBAC | User lifecycle, group-based access control, RBAC | ✅ Complete |
-| Lab 2 | MFA & Authentication Methods | MFA enforcement, Security Defaults, sign-in log analysis | ✅ Complete |
-| Lab 3 | App Registrations | API permissions, client secrets, admin consent, delegated vs application permissions | ✅ Complete |
-| Lab 4 | PowerShell & Microsoft Graph API | Graph API authentication, user queries, automated provisioning | ✅ Complete |
-| Lab 5 | Bulk User Creation via CSV | PowerShell scripting, CSV automation, enterprise onboarding simulation | ✅ Complete |
+| Lab 1 | Users, Groups & RBAC | User lifecycle, RBAC, group management | ✅ Complete |
+| Lab 2 | MFA & Authentication Methods | MFA, Security Defaults, sign-in logs | ✅ Complete |
+| Lab 3 | App Registrations | API permissions, client secrets, admin consent | ✅ Complete |
+| Lab 4 | PowerShell & Microsoft Graph API | Graph API, automation, user provisioning | ✅ Complete |
+| Lab 5 | Bulk User Creation via CSV | CSV automation, bulk provisioning, error handling | ✅ Complete |
+| Lab 6 | AD Domain Controller Setup | Windows Server, AD DS, domain creation | ✅ Complete |
+| Lab 7 | OUs & Users in Active Directory | ADUC, OU design, user and group management | ✅ Complete |
+| Lab 8 | Group Policy Objects | GPO creation, password policy, account lockout | ✅ Complete |
+| Lab 9 | Domain Join Windows 10 Client | Domain join, DNS, workstation provisioning | ✅ Complete |
+| Lab 10 | Active Directory PowerShell | Get-ADUser, New-ADUser, Disable-ADAccount | ✅ Complete |
+| Lab 11 | Okta Users & Groups | Okta admin, user provisioning, group management | ⏳ Upcoming |
+| Lab 12 | Okta MFA Policies | MFA policies, authenticators, enrollment | ⏳ Upcoming |
+| Lab 13 | Okta SSO | SAML 2.0, SSO configuration, app integration | ⏳ Upcoming |
 
 ## Technical skills demonstrated
 - Microsoft Entra ID administration
+- On-premises Active Directory (AD DS)
 - Role-Based Access Control (RBAC)
-- Multi-Factor Authentication (MFA) configuration
-- Conditional Access policy design
-- Privileged Identity Management (PIM) concepts
+- Multi-Factor Authentication (MFA)
+- Group Policy Objects (GPO)
 - App registration and API permission management
-- PowerShell 7 scripting
+- PowerShell 5.1 and 7 scripting
 - Microsoft Graph API
+- Active Directory PowerShell module
 - Bulk user provisioning automation
+- Domain Controller setup and management
+- Windows Server 2022 administration
 - Identity lifecycle management
 - Sign-in log analysis and troubleshooting
 
 ## Tools and technologies
 - Microsoft Entra ID (Free tier)
-- PowerShell 7.6.0
+- Windows Server 2022 Standard Evaluation
+- Windows 10 Enterprise
+- VirtualBox (Hypervisor)
+- PowerShell 5.1 & 7.6.0
 - Microsoft Graph PowerShell SDK
+- Active Directory Users and Computers (ADUC)
+- Group Policy Management Console
 - Visual Studio Code
 - GitHub
 
-## Lab environment
-- Personal Entra ID tenant: jalenthomas1216gmail.onmicrosoft.com
-- 10+ test users created and managed
-- 2 security groups configured
-- 1 app registration with API permissions
-- 5 automated scripts written and executed
+## Lab environments
+- Cloud: Personal Entra ID tenant (jalenthomas1216gmail.onmicrosoft.com)
+- On-premises: VirtualBox lab with Domain Controller (lab.local)
+- Client: Windows 10 Enterprise domain-joined workstation
+
+## Portfolio website
+https://jalenht.github.io/IAM-homelab/

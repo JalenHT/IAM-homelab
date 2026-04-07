@@ -1,7 +1,7 @@
 # IAM Home Lab — Microsoft Entra ID & Active Directory
 
-Hands-on Identity and Access Management labs built in 
-Microsoft Entra ID and on-premises Active Directory 
+Hands-on Identity and Access Management labs built in
+Microsoft Entra ID and on-premises Active Directory
 using PowerShell and Microsoft Graph API.
 
 ## Certifications
@@ -23,9 +23,10 @@ using PowerShell and Microsoft Graph API.
 | Lab 9 | Domain Join Windows 10 Client | Domain join, DNS, workstation provisioning | ✅ Complete |
 | Lab 10 | Active Directory PowerShell | Get-ADUser, New-ADUser, Disable-ADAccount | ✅ Complete |
 | Lab 11 | Entra Connect Hybrid Identity | UPN suffixes, Entra Connect, sync troubleshooting | ✅ Complete |
-| Lab 12 | Okta Users & Groups | Okta admin, user provisioning, group management | ⏳ Upcoming |
-| Lab 13 | Okta MFA Policies | MFA policies, authenticators, enrollment | ⏳ Upcoming |
-| Lab 14 | Okta SSO | SAML 2.0, SSO configuration, app integration | ⏳ Upcoming |
+| Lab 12 | KQL & Sign-in Log Analysis | Log filtering, failed logins, application analysis | ✅ Complete |
+| Lab 13 | Okta — Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
+| Lab 14 | Microsoft Sentinel | SIEM, analytics rules, alert investigation | ⏳ Upcoming |
+| Lab 15 | ServiceNow ITSM | Access requests, onboarding tickets, provisioning | ⏳ Upcoming |
 
 ## Technical skills demonstrated
 - Microsoft Entra ID administration
@@ -42,9 +43,11 @@ using PowerShell and Microsoft Graph API.
 - Domain Controller setup and management
 - Windows Server 2022 administration
 - UPN suffix management
+- Sign-in log analysis and filtering
+- Failed login investigation
 - Sync error troubleshooting (AADSTS700027)
+- Okta concepts and architecture
 - Identity lifecycle management
-- Sign-in log analysis and troubleshooting
 
 ## Tools and technologies
 - Microsoft Entra ID (Free tier)

@@ -24,7 +24,7 @@ using PowerShell and Microsoft Graph API.
 | Lab 10 | Active Directory PowerShell | Get-ADUser, New-ADUser, Disable-ADAccount | ✅ Complete |
 | Lab 11 | Entra Connect Hybrid Identity | UPN suffixes, Entra Connect, sync troubleshooting | ✅ Complete |
 | Lab 12 | KQL & Sign-in Log Analysis | Log filtering, failed logins, application analysis | ✅ Complete |
-| Lab 13 | Okta — Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
+| Lab 13 | Okta - Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
 | Lab 14 | Microsoft Sentinel | SIEM, analytics rules, alert investigation | ⏳ Upcoming |
 | Lab 15 | ServiceNow ITSM | Access requests, onboarding tickets, provisioning | ⏳ Upcoming |
 

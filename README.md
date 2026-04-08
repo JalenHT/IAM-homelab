@@ -24,8 +24,8 @@ using PowerShell and Microsoft Graph API.
 | Lab 10 | Active Directory PowerShell | Get-ADUser, New-ADUser, Disable-ADAccount | ✅ Complete |
 | Lab 11 | Entra Connect Hybrid Identity | UPN suffixes, Entra Connect, sync troubleshooting | ✅ Complete |
 | Lab 12 | KQL & Sign-in Log Analysis | Log filtering, failed logins, application analysis | ✅ Complete |
-| Lab 13 | Okta - Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
-| Lab 14 | Microsoft Sentinel | SIEM, analytics rules, alert investigation | ⏳ Upcoming |
+| Lab 13 | Okta Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
+| Lab 14 | Microsoft Sentinel | SIEM deployment, KQL queries, analytics rules | ✅ Complete |
 | Lab 15 | ServiceNow ITSM | Access requests, onboarding tickets, provisioning | ⏳ Upcoming |
 
 ## Technical skills demonstrated
@@ -47,6 +47,9 @@ using PowerShell and Microsoft Graph API.
 - Failed login investigation
 - Sync error troubleshooting (AADSTS700027)
 - Okta concepts and architecture
+- Microsoft Sentinel SIEM deployment
+- KQL query writing and execution
+- Analytics rule creation and threat detection
 - Identity lifecycle management
 
 ## Tools and technologies
@@ -60,6 +63,9 @@ using PowerShell and Microsoft Graph API.
 - Active Directory Users and Computers (ADUC)
 - Active Directory Domains and Trusts
 - Group Policy Management Console
+- Microsoft Sentinel
+- Microsoft Defender XDR Portal
+- Log Analytics (KQL)
 - Visual Studio Code
 - GitHub
 
@@ -68,6 +74,7 @@ using PowerShell and Microsoft Graph API.
 - On-premises: VirtualBox lab with Domain Controller (lab.local)
 - Client: Windows 10 Enterprise domain-joined workstation
 - Hybrid: Entra Connect configured between lab.local and Entra ID
+- SIEM: Microsoft Sentinel workspace (IAM-Sentinel-Workspace)
 
 ## Portfolio website
 https://jalenht.github.io/IAM-homelab/

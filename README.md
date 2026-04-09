@@ -6,7 +6,6 @@ using PowerShell and Microsoft Graph API.
 
 ## Certifications
 - CompTIA Security+ ✅
-- TryHackMe Cybersecurity 101 ✅
 
 ## Labs completed
 
@@ -26,7 +25,7 @@ using PowerShell and Microsoft Graph API.
 | Lab 12 | KQL & Sign-in Log Analysis | Log filtering, failed logins, application analysis | ✅ Complete |
 | Lab 13 | Okta Concepts & Architecture | Okta vs Entra ID, SSO, SAML flow, MFA policies | ✅ Complete |
 | Lab 14 | Microsoft Sentinel | SIEM deployment, KQL queries, analytics rules | ✅ Complete |
-| Lab 15 | ServiceNow ITSM | Access requests, onboarding tickets, provisioning | ⏳ Upcoming |
+| Lab 15 | ServiceNow ITSM Concepts | Access requests, onboarding tickets, audit trails | ✅ Complete |
 
 ## Technical skills demonstrated
 - Microsoft Entra ID administration
@@ -50,6 +49,7 @@ using PowerShell and Microsoft Graph API.
 - Microsoft Sentinel SIEM deployment
 - KQL query writing and execution
 - Analytics rule creation and threat detection
+- ServiceNow ITSM concepts and workflows
 - Identity lifecycle management
 
 ## Tools and technologies

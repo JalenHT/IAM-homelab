@@ -73,7 +73,7 @@ using PowerShell and Microsoft Graph API.
 - Cloud: Personal Entra ID tenant (jalenthomas1216gmail.onmicrosoft.com)
 - On-premises: VirtualBox lab with Domain Controller (lab.local)
 - Client: Windows 10 Enterprise domain-joined workstation
-- Hybrid: Entra Connect configured between lab.local and Entra ID
+- Hybrid: Entra Connect configured between lab. local and Entra ID
 - SIEM: Microsoft Sentinel workspace (IAM-Sentinel-Workspace)
 
 ## Portfolio website
